@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="/fragment/head  :: head" >
+        <link  rel="stylesheet" href="../static/encriptar.css" >
+        <title>Head Esta funcionando</title>
+    <!--  <meta charset="UTF-8">
+        <link  rel="stylesheet" th:href="@{encriptar.css}" >-->
+    </head>
+<body>
+   <!-- ---------------------------------------------------------------------------------------------------------------
+     - ----------------------------------------------------------------------------------------------------------------->
+    <div class="iconoEncriptar">
+      <img src="../static/encriotado.png" alt="" class="logoPortada" th:src="@{encriotado.png}">
+    </div>
+   <!-- ---------------------------------------------------------------------------------------------------------------
+    - ----------------------------------------------------------------------------------------------------------------->
+ <div class="contenedorPrincipal">  
+ <form th:action="@{/recibirMensaje}"  th:object="${data}" method="POST">
+        <div class="box-elemento">
+            <textarea th:field="*{textoM}" class="cajaEncriptadora"></textarea>
+            <button type="submit" class="botonEncriptar">ENCRIPTAR</button>
+        </div>
+            
+    
+    
+ </form>   
+ </div>
+   <!-- ---------------------------------------------------------------------------------------------------------------
+        - ----------------------------------------------------------------------------------------------------------------->
+
+
+</body>
+</html>

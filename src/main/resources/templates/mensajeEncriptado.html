@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <head th:replace="/fragment/head  :: head" >
+    <link rel="stylesheet" href="../static/encriptado.css">
+    <title>MensajeEncriptado</title>
+</head>
+<body>
+ 
+  <div class="imagHorus">
+    <img src="../static/ojoHorus.png" alt="" class="ojoHorus"  th:src="@{ojoHorus.png}">
+  </div>
+ 
+ <div class="contenedorEncriptado">
+    <div class=" cajaEncriptada">    
+    <form th:action="@{/recibirEncriptado}"  th:object="${data}" method="POST">
+        <p th:text ="${mensaje}"   class="textoCifrado"></p>
+        <p th:text ="${mensajeCifrado}"  class="textoCifrado"> Hola mundo</p>
+        <input type="hidden" th:name="textoM" th:value="${mensaje}">
+
+    </div>
+        <div class="boxBotones">
+            <button type="submit" class="descifrar">Descifrar</button>
+            <a th:href="@{/}"class="volverAtras">Volver</a>
+        </div>
+    </form>
+ </div>
+
+</body>
+</html>
